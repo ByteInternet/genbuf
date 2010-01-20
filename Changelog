@@ -1,0 +1,5 @@
+* 20050408 justin@byte.nl:
+  Pidfile support added. Use -p <file> to hint for the use of a pid file, if
+  file exists the program will check for existance of running program
+  belonging to the pid. If none exit it will continue and place it's own pid
+  in the file.
