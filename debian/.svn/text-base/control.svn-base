@@ -1,0 +1,17 @@
+Source: genbuf
+Section: base
+Priority: optional
+Maintainer: Allard Hoeve <allard@byte.nl>
+Uploaders: Justin Ossevoort <justin@byte.nl>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.1
+
+Package: genbuf
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Generic buffer program written in C
+ Buffers almost anything to almost anything. Read from files and write
+ to sockets, read from pipes and write to a remote UDP port. Anything
+ goes. And all output is buffered internally.
+ .
+ Supported IO modules are: files, pipes, UDP sockets, TCP sockets.
