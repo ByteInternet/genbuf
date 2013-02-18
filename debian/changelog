@@ -1,6 +1,15 @@
+genbuf (0.3.1) unstable; urgency=low
+
+  * Port naar 64 bits.
+  * msglen moet size_t zijn in logger.c.
+  * input_buffer.c had een aantal ints in de sprintf die long ints moesten zijn.
+
+ -- Allard Hoeve <allard@byte.nl>  Thu, 23 Dec 2010 17:50:45 +0100
+
 genbuf (0.3) unstable; urgency=low
 
-  * reset version numbering
+  * this actually works@byte so replacing v 0.2  which does not work 
+    on loghost. It comes from some other source.
 
  -- Wojtek Burakiewicz <wojtek@byte.nl>  Wed,  6 Jan 2010 15:09:30 +0100
 

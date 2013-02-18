@@ -70,11 +70,11 @@ void input_buffer_print (struct input_buffer *buffer)
 {
 	if (buffer->current < buffer->border)
 	{
-		fprintf(stderr, "##DEBUG##{{{{%.*s||||%.*s}}}}\n", buffer->end - buffer->border, buffer->border, buffer->current - buffer->start, buffer->start);
+		fprintf(stderr, "##DEBUG##{{{{%.*s||||%.*s}}}}\n", (int) (buffer->end - buffer->border), buffer->border, (int) (buffer->current - buffer->start), buffer->start);
 	}
 	else
 	{
-		fprintf(stderr, "##DEBUG##{{{{%.*s}}}}\n", buffer->current - buffer->border, buffer->border);
+		fprintf(stderr, "##DEBUG##{{{{%.*s}}}}\n", (int) (buffer->current - buffer->border), buffer->border);
 	}
 }
 
@@ -174,12 +174,12 @@ int input_buffer_validate (struct input_buffer *buffer)
 	   ) )
 	{
 		/* Buffer is corrupted */
-		fprintf(stderr, "[input_buffer.c]{validate}: Buffer CORRUPT: start:%p border:%p end:%p current:%p size:%d front:%d back:%d diff:%d avail:%d write:%d\n", buffer->start, buffer->border, buffer->end, buffer->current, buffer->end - buffer->start, buffer->border - buffer->start, buffer->end - buffer->border, buffer->current - buffer->border, buffer->available, buffer->write);
+		fprintf(stderr, "[input_buffer.c]{validate}: Buffer CORRUPT: start:%p border:%p end:%p current:%p size:%ld front:%ld back:%ld diff:%ld avail:%ld write:%ld\n", buffer->start, buffer->border, buffer->end, buffer->current, (long int) (buffer->end - buffer->start), (long int) (buffer->border - buffer->start), (long int) (buffer->end - buffer->border), (long int) (buffer->current - buffer->border), (long int) buffer->available, (long int) buffer->write);
 		return FALSE;
 	}
 	
 	/* Buffer is in good health */
-	fprintf(stderr, "[input_buffer.c]{validate}: Buffer CORRECT: start:%p border:%p end:%p current:%p size:%d front:%d back:%d diff:%d avail:%d write:%d\n", buffer->start, buffer->border, buffer->end, buffer->current, buffer->end - buffer->start, buffer->border - buffer->start, buffer->end - buffer->border, buffer->current - buffer->border, buffer->available, buffer->write);
+	fprintf(stderr, "[input_buffer.c]{validate}: Buffer CORRECT: start:%p border:%p end:%p current:%p size:%ld front:%ld back:%ld diff:%ld avail:%ld write:%ld\n", buffer->start, buffer->border, buffer->end, buffer->current, (long int) (buffer->end - buffer->start), (long int) (buffer->border - buffer->start), (long int) (buffer->end - buffer->border), (long int) (buffer->current - buffer->border), (long int) buffer->available, (long int) buffer->write);
 	Log2(debug, "Buffer is in good health", "[input_buffer.c]{validate}");
 	return TRUE;
 }

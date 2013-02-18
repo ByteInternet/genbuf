@@ -71,7 +71,7 @@ static int logger_write_backlog (struct logger *this, FILE *backlog_out)
 
 static void logger_run (struct logger *this)
 {
-	unsigned int msglen;
+	size_t msglen;
 	char *msg;
 	FILE *backlog_in, *backlog_out;
 	
